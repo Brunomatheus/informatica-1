@@ -29,12 +29,17 @@ def listar_aluno(aluno):
         print(f"Aluno(a): {alunos["nome"]}")
         print(f"Turma: {alunos["turma"]}")
         print(f"Media: {alunos["media"]}")
-
+def aprovados(aluno):
+    for alunos in aluno:
+        if(alunos["media"] >= 7 ):
+             print(f"Aluno(a): {alunos["nome"]} aprovado")
+             return
 while(True):
     print("--- Menu ---")
     print("(1) - Cadastrar aluno")
     print("(2) - Ver media do aluno")
     print("(3) - Listar alunos")
+    print("(4) - Alunos aprovados")
     opcao = input("Digite a opção: ")
     if(opcao == "1"):
         cadastrar_aluno(aluno)
@@ -42,6 +47,8 @@ while(True):
         media_aluno(aluno)
     elif(opcao == "3"):
         listar_aluno(aluno)
+    elif(opcao =="4"):
+        aprovados(aluno)
 
         
     
